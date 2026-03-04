@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //浅拷贝 
+        //a存在栈内 存储的基本类型值是100 
+        //a赋值给b b也存在栈内 存储的基本类型值是100
+        //ab两个是相互独立的 互不影响
+        let a =100;
+        let b =a;
+        a = 200;
+        console.log(b);
+
+        //c存在栈内 存储的引用类型值是[1,2,3]的地址
+        //c赋值给d d也存在栈内 存储的引用类型值是[1,2,3]的地址
+        //cd两个是相互依赖的 互相关联的 也就
+        let c = [1,2,3];
+        let d = c;
+        c[0] = 100;
+        console.log(d);
+
+    </script>
+</body>
+</html>
