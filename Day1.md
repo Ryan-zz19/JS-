@@ -1,0 +1,623 @@
+js介绍：
+变量 
+常量
+数据类型
+类型转换
+算术运算符
+实战案例
+
+1.js是什么
+a.一种运行在客户端的编程语言，实现人机交互的结果
+
+b.作   用：
+  a.网页特效（监听用户的一些行为让网页做出对应的反馈）
+  b.表单验证（针对表单数据的合法性进行判断）
+  c.数据交互（获取后台数据，渲染到前端）
+  d.服务端编程（node.js）
+  
+c.js的组成（有什么？）
+ECMAScript：规定了js基础语法核心知识
+比如：变量、分支语句、循环语句、对象等等
+web api：
+DOM操作文档，比如对页面元素进行移动、大小、添加删除等操作
+BOM操作浏览器，比如页面弹窗，检测窗口宽度、存储数据到浏览器等等
+一些基础知识可以搜MDN
+
+
+
+2.js书写位置
+css 位置：1.行内 2.内部 3.外部  样式表
+js位置：1.行内 2.内部 3.外部 样式表
+
+js行内部样式表：
+写在</body>前面
+写在最下面的原因是 按顺序执行 
+
+外部样式表：
+<body>
+  <script src="my.js"></script>
+</body>
+
+行内样式表：
+写在表签内部
+<button onlick="alter('逗你玩的--')">点击我月薪过万</button> 后面vue会用这种模式
+
+注意事项：
+练习：
+1.<script src="my.js">   js.   alter('你好，js')
+  
+</script>
+
+2.<script>
+ alter（'你好，js'）
+</script>
+
+注释/结束符
+单行注释：
+符号：//
+作用：//右边这一行代码会被忽略
+
+块注释：
+符号：/* */
+作用：在/* 和 */之间的所有内容都会被忽略
+
+结束符：；要么每局都写 要么每局都不写
+
+总结：js 有单行注释 和多行注释 //和/* */
+
+1.5 js输入输出语法
+什么是语法 ：
+人和计算机打交道的规则约定
+我们要按这个规则去写
+比如：你吃了吗
+我们操作计算机 需要计算机能够看懂
+
+语法1：document.write（'wshi'）
+       document.write(;;shd)
+       document.write(<h1></h1>)
+作用：向body内输入内容
+注意输出的内容写的是标签，也会被解析成网页元素
+
+语法2：alter（‘要出的内容’）
+作用：页面弹出警告对话框
+
+语法3:console.log('kankanduibudui1')
+作用：控制台输出语法，程序员调试使用
+
+语法4：
+prompt（'请输入您的姓名'）
+作用：显示一个对话框，对话框中包含一条文字信息，用来提示用户输入文字
+练习题：
+a.浏览器弹出对话框 alter（'nihao,js'）
+b.页面打印输出：document.write('shhdj')
+                document.write(<h1>266</h>)
+c.页面控制台输出：console.log('ta-sjs')    
+
+js执行代码的顺序：
+按html流顺序执行
+alter（） 和 prompt（）他们会跳过页面渲染先被执行
+
+字面量：
+在计算科学当中 字面量 是计算机中描述 事/物
+‘’ 1000 【 】 {} 这些都是字面量
+
+总结输入输出语句：
+输入：prompt（）
+输出：alter（） document.write（） console.log（）
+
+
+
+
+2.变量：
+变量是什么；
+变量的基本使用；
+变量的本质
+变量命名规则与规范
+
+变量是什么？
+用户输入的数据我们如何存储起来？
+答：变量
+白话：变量就是装东西的盒子
+通俗：变量是计算机中用来存储数据的容器，它可以让计算机变得有记忆
+注意：变量不是数据本身，它仅仅是一个用于存储数值的容器。可以理解为一个哥用来装东西的纸箱子
+
+变量是怎么理解的：
+装数据的容器 变量是容器不是数值
+
+基本使用：
+1.声明变量：
+let 变量名
+关键字 变量名
+变量赋值 =
+变量=字面量
+申明变量的时候直接完成赋值操作，这种操作也被称为1 变量初始化
+=赋值运算符 
+
+变量的基本使用：
+目标：1.掌握变量的更新 2.声明多变量的写法
+更新变量：
+变量赋值之后 还可以接着赋值来更新它
+eg：let age = 18；
+age=19；
+console。log（age） 19
+
+let age = 19
+let uname =18
+console.log(age,uname)
+
+用户输入：
+prompt（）
+内部处理保存数据
+let 。。。
+打印输出
+document.write（）
+
+交换变量的值
+num 1 = 10；
+num 2= 20；
+思路：临时变量 做中间存储
+let num1 = 10
+let num2 = 20
+let temp
+//把右边的值给左边
+temp = num1；
+num1 =num2；
+num2 = temp
+
+变量：计算机存储数据的地方 相当于是一个空间
+本质：是程序在内存中申请的一块用来存放数据的小空间
+let age age就是函数的名字
+
+函数变量名：
+规则(法律方面)：不能用特殊的let int啥的
+不能用数字 不能用下划线啥的 哦哦还有区分大小写
+规范（道德方面）：
+小驼峰命名法：第一个单词首字母小写 后面每个单词首字母大写 eg：userName
+let uname = prompt（'请输入姓名'）
+let age = prompt('请输入年龄')
+let gender = prompt（"请输入性别"）
+document.write(uname,age,gender)
+
+let 和var 的区别：
+var 就是一个bug 不要用它就对了
+
+变量一次能够存几个值 我像保存5个人的姓名怎么办
+
+数组：一种讲一组数据存储在单个变量名下的优雅方式
+let arr =[] 数组字面量
+let 数组名=[数据1，数据2，数据3]
+声明数组 有序 
+使用数组：索引号 0123
+console.log（arr[0]）
+数据的编号也叫索引 或下标
+数组可以存储任意类型的数据
+
+数组取值的案例：
+let 
+
+术语：
+元素：数组中保存的每个数据都叫数组元素
+下标：数组中的数据编号
+长度：数组中数据的个数，通过数组的length属性获得
+
+
+常量
+1.不允许修改数值
+2。声明了必须赋值
+
+数据类型：（给数据分类）
+1.基本数据类型 {
+number数字型 整数 小数 正数 负数 统称：数字类型
+string
+boolean
+undefined
+null
+}
+2.引用数据类型
+js：若数据类型 得赋值才知道是啥数据类型 java强数据类型
+算数运算符：
++ = * / % 计算顺序：先乘除 取余 再加减
+题：给袁半径出面积
+//1.页面弹出对话框
+let r = prompt（'qingshuru'）
+
+2.计算面积
+  let re = 3.14*r*r
+  3.页面输出
+  document.wirte（re）
+  NaN：计算错误
+  粘性
+
+  数据类型：字符串类型（string）
+  '' "" ``这些包裹的数据都叫字符串
+  let tel = '1234'
+  console.log('str') 
+  console.log(tel)
+  console.log('tel')
+  变量不能加引号 加了之后就变成字符串了
+  注意：无论是单引号还是双引号 必须成对使用 而且 单双引号必须相互嵌套 不能自己套自己
+  单引号会找离自己最近的进行比配
+  内双外单 外单内双
+  + 数字相加 字符相连
+console.log(1+1)
+console.log('pink'+'laoshi')
+let age = 18
+docuemnt.write('我今年18岁')
+document.write('我今年'+age+'了')
+模板字符串：
+`` ${}
+作用：拼接字符串与变量
+let age 18
+document.log（`我今年${age}岁了`）
+''"" ``字符串数据 字符串拼接可以用模板字符串
+let uName = prompt('亲输入您的姓名：')
+let age = prompt（'请输入您的年龄：'）
+document.write(`大家好，我叫${uName},我今年贵庚${age}岁了`)
+
+数据类型boolean类型：
+表示肯定和否定在计算机中对应的是布尔类型数据
+true false 是布尔型的字面量
+let isCool = true
+console.log（isCool）
+
+数据类型 undefined类型：
+未定义类型是一个比较特殊的类型
+只有一个值为undefined
+通常在变量声明不赋值的情况下会说明
+使用场景：
+let age
+console.log（age）
+我们在开发过程中经常声明一个变量 等待传送过来的数据
+如果我们不知道 这个数据能否传递过来 此时我们可以通过检测这个变量是不是undefined 就判断用户是否有数据传递过来
+
+数据类型null 空 无 
+let obj = null
+与undefined区别：
+undefined 表示没有赋值
+null表示赋值了，但是内容为空
+console.log（null+1）1
+console.log（undefined+1）false
+定义变量没给值就是undefined
+如果变量是undefined 就说明值没有传递过来
+
+数据类型检测数据类型
+控制台输出语句：
+let age = 18
+关键字typeof来检测数据类型
+let num = 10
+console.log（typeof num） 数字结果
+let str = 'pink'
+console.log（typeof str）
+let str1 = '10'
+console.log(typeof str1)
+let flag = false
+console.log(typeof flag)
+let un
+console.log(typeof un)
+let obj = null
+console.log(typeof null) object
+
+单选框多选框提示框 默认的变量值1都是字符串 此时就不能直接简单的进行加法运算
+js 弱数据类型语言 它只有赋值了才清楚
+console.log（'10000'+'2000'）//输出结果100002000
+把一种数据类型的变量转换成我们需要的数据类型
+1.隐式转换 2.显示转换
+某些运算符在执行时，系统内部自动将数据类型进行转换，这种转换称为隐式转换
+规则：
++两边只要有一个是字符串 都会把另外一个转成字符串
+除了+以外的算数运算符 比如-*/等都会把数据转化成数字类型
+
+注意：+作为正号解析可以转成数字型
+//console.log（+12）
+//console.log（+'123'）//转为数字型   这些都叫做隐形转换
+任何数据和字符串相加结果都是字符串
+
+隐形转换规律不清晰 因此显性转换
+：自己写代码告诉系统该转成什么类型
+转成数字类型
+Number（数据）
+let str = '123'
+console.log(Number('str')) 123
+console.log(Number(''pink))NaN
+let num = prompt('请输入年薪')
+console.log(Number(num))
+or
+let num = Number(prompt('请输入年薪'))
+console.log(Number(num))
+Number(数据)
+转成数据 字符串内容里有非数字 转换失败 结果为NaN 
+parseint（数据）
+只保留整数
+parseFloat（数据）
+可以保留小数
+console.log（parseInt（'12px'）） 12
+字符串转化为数字型 同时只保留整数
+console.log(parseInt('12.83'))  12
+console.log(parseFloat('abd12.23'))NaN
+显式转换：Number parseInt parseFloat
+1.用户输入
+let num1 =prompt（'请输入第一个数字'）
+let num2 =prompt（'请输入第二个名字'）
+//2.输出
+alter(num1 + num2)
+
+let num1 = +prompt（'请输入第一个数：'）
+let num2 = +prompt（'请输入第二个数：'）
+alter(`两个数相加的和是：${num1 + num2}`)
+
+实战：输入订单用户和地址 还有各种信息  然后打印
+<h2>订单确定</h2>
+<table>
+  <tr>
+    <th>商品名称</th>  
+     <th>商品价格</th>  
+     <th>商品数量</th>  
+    <th>总价</th>
+    <th>收获地址</th>  
+  </tr>
+  <tr>
+  <td>小米青春版PLUS</td>
+  <td>1999元</td>
+  <td>10</td>  
+  <td>100</td>  
+  <td>武汉黑马</td>  
+    
+  </tr> 
+</table>   
+<style>
+  table {
+    border-collapse:collapse;
+    height:80px;
+    margin:0 auto;
+    text-align:center
+  }
+  th {
+    padding:5px 30px;
+  }
+  table,th,td {
+    border:1px solid #000;
+  }
+</style>
+
+1.用户输入
+let price = +prompt('请输入商品价格：')
+let num = + prompt('请输入商品数量：')
+let address = +prompt('请输入收获地址：')
+2。计算总额
+let total = price*num
+3.页面打印渲染
+document.write(`
+ <table>
+  <tr>
+    <th>商品名称</th>  
+     <th>商品价格</th>  
+     <th>商品数量</th>  
+    <th>总价</th>
+    <th>收获地址</th>  
+  </tr>
+  <tr>
+  <td>小米青春版PLUS</td>
+  <td>1999元</td>
+  <td>10</td>  
+  <td>100</td>  
+  <td>武汉黑马</td>  
+    
+  </tr> 
+</table>   
+`)
+i++ ++i
+赋值运算符 自增运算符 前置运算符 后置运算符
+let i= 1
+console.log(i++ + ++i +i)  7
+
+比较运算符：
+能使用常见的比较运算符进行比较运算
+> < >= <= == 两边值是否相等 ===左右两边是否类型和值都相等
+console.log（2 =='2'）true
+console.log(2 ==='2') false
+//以后判断是否相等 请用 ===
+console.log(NaN ===NaN) NaN不等于任何人 包括它自己
+// 开发过程中判断是否相等 强烈建议===
+if(num = 2){
+
+}
+这个是赋值 永远也不可能有条件
+if（num === 2）{
+
+} //这种可以
+
+
+字符串比较：
+ASCII字符代码表
+
+尽量不比小数 小数含精度的问题
+不同类型之间比较会发生隐形转换
+最终把数据隐式 转成number类型在比较
+所以在开发中 我们都用 === 或者！==
+
+= == ===
+比较结果 true false
+
+逻辑运算符
+：判断一个变量是否大于5且小于10
+num >5 && num <10
+逻辑运算符：
+用来判断多种条件
+&& 并且 一假则假 
+|| 或者 一真则真
+！非取反
+let num = 2
+console.log（num >5 && num >10）
+
+运算符优先级：
+运算符：
+1.（）
+2.++ -- ！
+3.算数运算符：先*/ % 后+ —
+4.关系运算符：< >= <=
+5.相等运算符：== ！= === ！==
+6.逻辑运算符：先&& 后||
+7.赋值运算符：=
+8.逗号运算符：，
+&&优先级比||高
+
+表达式和语句：
+表达式：应为表达式可被求值 所有它可以写在赋值语句的右侧
+语句：而语句不一定有值 所以比如alter（） for 和break 等语句就不能被用于赋值
+语句 ：alter（）弹出对话框 console.log（）控制台打印输出
+
+
+程序三大流行语句：
+顺序结构：
+分支结构）（有条件）三角
+循环结构：一直执行 反复执行
+
+分支语句：
+if分支   三元运算符  swich语句
+单分支
+if（条件）{
+  满足条件执行
+}
+
+除了0所有的数字都是真
+除了‘’所有的字符串都是真
+用户输入
+let sore = +prompt（‘请输入成绩’）
+进行判断
+if（score >=700）{
+alter('恭喜考入黑马程序员')
+}
+
+双分支if语法“
+if（条件）{
+满足条件执行语句
+}
+else（条件）{
+满足条件执行语句
+}
+
+多分支if语法：
+适合有多个结果的时候，比如学习成绩分为：优 良 中 差  多选一
+if（条件）{
+代码1
+}
+else if（）{
+代码2
+}
+else if（）{
+代码3
+}
+else（）{
+代码n
+}
+
+用户输入：
+let score = +prompt（‘请输入成绩：’）
+判断输出
+if（score >= 90）{
+alert('成绩优秀，宝贝，你是我的骄傲')
+}
+else if(score >= 70){
+alert('成绩良好')
+}
+else if（score >= 60）{
+alert('成绩良好')
+}
+else{
+alert('成绩不及格 完蛋了')
+}
+if（数字只有0是假的）
+if（字符串只有空是假的）
+
+分支语句之三元运算符：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+       
+       
+
+
+
+
+
+
+
+
