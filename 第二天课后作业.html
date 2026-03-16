@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//打印0-20之间的整数 将每个数输出到控制台
+ let i = 0
+ while(i<=20){
+    document.write(i)
+    i++
+ }
+
+ //计算1-1000之间的累加和，并且打印输出到页面中
+let r= 1
+let sum = 0
+    while(r<=1000){
+        sum +=r
+        r++
+    }
+    document.write(sum)
+ //页面一次打印100-200之间，可以被6整除的数字
+ let b = 100
+ while(b <= 200){
+      if(b%6 ==0 ){
+        document.write(b)
+      }
+      b++
+ }
+ 
+    </script>
+</body>
+</html>
