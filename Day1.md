@@ -776,6 +776,142 @@ for(let i = 1;i <=3;i++){
     document.write('月薪过万')
 }
 
+遍历数组：
+for循环的最大价值就是循环数组
+
+let arr = ['刘德华','刘晓强'，'刘晓庆'，'刘若英']
+console.log(arr[0])
+console.log(arr[1])
+console.log(arr[2])
+console.log(arr[3])
+
+for(let i = 0;i<=3;i++){
+     console.log(arr[i])
+}
+
+for(let i =0;i < arr.length;i++){
+    console.log(arr[i])
+}
+let arr1 = []
+console.log
+
+for：
+continue break 两个退出循环
+for(let i =1;i<=5;i++){
+   if(i===3){
+      continue //退出本次循环 后面的代码都不执行 继续下一次循环
+   }
+   console.log(i)
+   document.wirte(i)
+}
+while（true） 构造无线循环 需要 break来跳出循环
+for也是一样的
+for(;;){
+console.log(11)
+}
+fo循环和while的区别
+当明确了循环次数用for循环
+当不明确循环次数 用while循环
+
+for循环之嵌套循环
+一个循环再套一个循环
+  for(外部声明记录循环次数的变量；循环条件；变化值){
+  for（内部记录循环次数的变量；循环条件；变化值）{
+      循环体
+  }
+  }
+  计算：每天计5个单词 三天后能计算多少单词
+  循环嵌套（双重for循环）
+  //外层循环打印 第n天
+  //里层循环打印 第几个单词
+  for（let i=1；i<3;i++）{
+  //内层循环打印几个单词
+  for(let j =1;j <=5;j++){
+     document.write（`记住了第${j}个单词`）
+  }
+  }
+  练习：页面中打印5行5列的星星
+  分析：
+  1.利用双重for循环来做
+  2.外层循环控制打印行 内层控制打印多少个
+  //外层循环打印行数
+  for（let i = 1;i<=5;i++）{
+     //内循环打印几个星星
+     for（let j =1；j<=5;j++）{
+       document.write('*')
+     }
+     //进行显示换行
+     document.write('<br>')
+  }
+
+  //用户输入行数和列数 打印对应的星星
+  let row =+prompt('请输入行数')
+  let col =+prompt（'请输入列数'）
+  for(let j=1;j<=row；j++){
+      document.write('*')
+ 
+  for(let k=1'k<=col;k++){
+    document.write('*')
+  }
+  document.write('<br>')
+   }
+
+   打印倒三角型星星
+   1.利用双重for循环来做
+   2.外层循环控制打印行 内层循环控制每行打印几个
+   3.内层循环的个数跟第几行是--对应的
+   //外层循环控制行数
+     for（let i=1；i<=5;i++）{
+   //内层循环控制打印几个
+     for(let j=1;j<=i;j++){
+     document.write('*')
+     }
+     //换行
+     document.write('<br>')
+  }
+
+  九九乘法表：
+  分析·：
+  1.只需要把刚才倒三角型星星做改动
+  2.*换成1x1=2格式
+
+  数组：Array是一种可以按顺序保存数据的数据类型
+  为什么要数组？
+  思考：如果我想保存一个班里所有同学的姓名怎么办？
+  场景：如果有多个数据可以用数组保存起来，然后放到一个变量中，管理非常方便
+
+  目标：能够声明数组并且能够获取里面的数据
+  let 数组名 = [数据1，数据2，...,数据n]
+
+  1.字面量生成数组
+  let arr = [1,2,3,'pink',true]
+  2.使用new Array 构造函数声明 了解
+  let arr = new Array(1,2,3,4)
+  console.log(arr)
+  数组是按顺序保存，所以每个数据都有自己的编号
+  计算机中的编号从0开始，所以小明的编号为0 小刚编号为1 以此类推
+  在数组中 数据的编号也叫索引
+
+  取值语法：
+  数组名[下标]
+  let names=[1，2，3，4，]
+  names[1]
+
+  术语：
+  元素：数组中保存的每个数据都叫数组元素
+  下标：数组中数据的编号
+  长度：数组中数据的个数，通过数组的length属性获得
+
+  let names =['小明'，'小刚'，‘小红’，‘小丽’，‘小米’]
+  console.log(names[0]) //小明
+  console.log(names[1]) //小刚
+  console.log（names.length）//5
+  
+
+
+
+
+
 
           
 
