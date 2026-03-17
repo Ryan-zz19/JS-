@@ -30,7 +30,66 @@ let sum = 0
       }
       b++
  }
+ //输出成绩案例：接收用户输入的分数 根据分数输出对应的等级字母ABCDE
+ //90-100 A
+ //80-89  B   
+ //70-79  C
+ //60-69  D
+ //0-59   E
+ let sore = prompt("请输入成绩")
+ if(sore >=90){
+    document.write("A")
+ }
+ else if(sore >=80){
+    document.write("B")
+ }
+ else if(sore >=70){
+    document.write("C")
+ }
+ else if(sore >=60){
+    document.write("D")
+ }
+ else{
+    document.write("E")
+ }
  
+
+ //输出星期练习（请使用switch分支语句来书写程序）
+ //题目描述：请用户输入一个星期数 就将对应的英文的星期打印出来
+ let score = +prompt('请输入一个星期数')
+ switch(score){
+    case 1:
+        document.write('Monday')
+        break
+    case 2:
+        document.write('Tuesday')
+        break
+    case 3:
+        document.write('Wednesday')
+        break
+    case 4: 
+        document.write('Thursday')
+        break
+    case 5:
+        document.write('Friday')    
+        break            
+ }
+
+ //用户登录验证 题目描述：接收用户输入的用户名和密码。若用户名为admin且密码为123456 则输出登录成功 否则输出登录失败
+  while (true){
+ let useName = prompt('请输入用户名')
+  let password = prompt('请输入密码')
+  
+    if(useName =='admin' && password =='123456'){
+   alert('登录成功')
+    break
+  }
+  else{
+    alert('登录失败')
+  }
+}
+
+
     </script>
 </body>
 </html>
