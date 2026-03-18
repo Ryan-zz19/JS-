@@ -906,6 +906,76 @@ for循环之嵌套循环
   console.log(names[0]) //小明
   console.log(names[1]) //小刚
   console.log（names.length）//5
+
+  遍历数组(重点)
+  目标：能够遍历输出数组里的元素
+     用循环把数组中每个元素都访问到
+   语法：
+      for(let i=0;i<数组名.length;i++){
+      数组名[i]
+      }
+      let nums = [10,20,30,40,50]
+      for(let i=0;i<nums.length;i++){
+          document.write(nums[i])
+      }
+
+  双循环for嵌套：
+      1在网页上打印五行五列   
+      2    到三角
+      3 99乘法表
+
+  数组求和：
+    求数组[2,6,1,7,4]里面所有元素的和以及平均值
+    分析：
+    1.声明一个求和变量sum
+    2.遍历这个数组，把
+    里面每个数组的元素加到sum里面
+    3.用求和变量sum除以数组的长度就可以得到数组的平均值
+    let arr =[2,6,1,7,4]
+    //求和变量sum
+    let sum  =0
+    //遍历累加
+    for（let i=0；i<arr.length;i++）{
+        sum +=arr[i]
+    }
+    console.log(`数组的和结果是:${sum}`)
+    //平均值 和/5=4 和/arr.length =4
+   console.log(`数组的平均值结果是：${sum/arr.length}`)
+
+   数组求最大值和最小值
+   求数组[2,6,1,77,52,25,7]
+
+   求数组[2,6,1,77,52,25,7]中的最大值
+   分析：
+   1.声明一个保存最大元素的变量max
+   2. 默认最大值可以取数组中的第一个元素
+   3.遍历这个数组，把里面每个元素和max相比较
+   4.如果这个数组元素大于max就把这个元素存到max里面，否则继续下一轮比较
+   5.最后输出这个max
+
+   let arr = [2,6,1,7,4]
+   let max = arr[0]
+   for(let i = 0;i<arr.length;i++){
+     //如果max，比数组元素里面的值小，我们就要这个数组赋值给max
+     if（max <arr[i]）{
+       max = arr[i]
+     }
+   }
+   console.log(max)
+   
+   
+   
+   
+    
+    
+  
+    
+      
+
+    
+      
+     
+  
   
 
 
