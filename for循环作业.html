@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        span{
+            display:inline-block;
+            width:100px;
+            padding:5px 10px;
+            border:1px solid #000;
+            margin:2px;
+            border-radius: 5px;
+            box-shadow:2px 2px 2px rgba(255, 192, 203, 0.5);
+            background-color:rgba(255, 192, 203, 0.5)
+
+
+        }
+    </style>
+    <script>
+        //99乘法表
+        //外层循环控制行数
+        for(let i=1;i<9;i++){
+           //内层循环控制列数
+           for(let j=1;j<=i;j++){
+            document.write(`<span>${j}x${i}=${j*i}\t</span>`)
+           }
+           document.write('<br>')
+        }
+        let arr =[12,23,34,45,56,67,78,89,90]
+        //求数组中元素的和
+        let sum = 0
+        for(let k=0;k<arr.length;k++){
+            sum +=arr[k]
+        }
+        document.write(`数组中元素的和是${sum}`)
+        //数组中元素的平均数
+        document.write(`数组中元素的平均数是${sum/arr.length}`)
+
+        //求数组中元素的最大值
+        let arr1 = [2,6,3,7,8]
+        let max = arr1[0]
+        //遍历数组
+        for(let c=1;c<arr1.length;c++){
+            if(max<arr1[c]){
+                max =arr1[c]
+            }
+        }
+        document.write(`数组中元素的最大值是${max}`)
+        //求数组中元素的最小值
+        let arr2 = [2,6,1,77,52,25,7]
+        let min =arr2[0]
+        for(let m=0;m<arr2.length;m++){
+            if(min>arr2[m]){
+                min = arr2[m]
+            }
+        }
+        document.write(`数组中元素的最小值是${min}`)
+        
+    </script>
+</body>
+</html>
