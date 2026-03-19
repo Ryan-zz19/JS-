@@ -977,6 +977,234 @@ for循环之嵌套循环
        arr.shift()
        arr.splice(操作的下标，删除的个数)
     let arr =[]
+    console.log(arr)
+    arr[0] = 1
+    修改：
+    eg:
+    let arr =['pink','red','green']
+    //修改
+    arr[0] = 'hotpink'
+    console.log(arr)
+    //给所有数组后面加个老师
+    for(let i=0;i<arr.length;i++){
+    arr[i] =arr[i] +'老师'
+    }
+
+  操作数组-新增
+  目标：掌握利用push向数组添加元素
+  数组.push()方法将一个或多个元素添加到数组的末尾，并返回该数组的新长度（重点）
+  语法：
+  arr.push(元素1，...,元素n)
+  eg：
+  let arr = ['pink','hotpink']
+  //新增  push 推
+  arr.push('deeppink')
+  console.log(arr)
+  console.log(arr.push('deeppink')) //3 最新数组的长度
+  console.log('deeppink','linghpink')
+
+  操作数组新增：
+  arr.unshift(新增内容)
+  eg：
+  let arr =['pink','hotpink']
+  arr.unshift('red')
+  console.log(arr)
+
+  push 是末尾加
+  unshift 是前面加
+  1想将末尾加数据元素
+  arr.push()
+  可以写多个
+  写最后一个元素 能打出新数组的长度
+
+  数组筛选
+  需求：将数组[2,0,6,1,77,0,52,0,25,7]中大于等于10的元素选进来，放进新数组
+  1.声明一个新数组存放新数据newArr
+  2.遍历原来的旧数组 找出大于等于10
+  3.依次追加给新数组newArr
+  let arr = [2,0,6,1,77,9,54,3,78,7]
+  //1.声明新的空数组
+  let newArr = []
+  //遍历旧数组
+  for(let i=0;i<arr.length;i++){
+  if(arr[i] >=10){
+    newArr.push(arr[i])
+  }
+  }
+  4.输出新数组
+  console.log(newArr)
+
+  将数组[2,0,6,1,77,0,52,0,25,7]中的0去掉 行成一个不包含0的数组
+  分析：
+  1.声明一个新的数组存放newArr
+  2.遍历原来的旧数组，找不出等于0的元素
+  3.依次追加新的数组 newArr
+
+  let arr =[2,0,6,1,77,0,52,0,25,7]
+  let newArr =[]
+  for(let i=0;i<arr.length;i++){
+  if(arr[i] !==0){
+  newArr.push = arr[i]
+  }
+  }
+
+  操作数组-删除
+  目标：能够删除数组元素（数据）
+  数组.pop()方法中删除最后一个元素
+  arr.pop()
+  eg:
+   let arr =['red','green','blue']
+   console.log(arr.pop()) //告诉你删除最后一个是blue
+   arr.pop
+
+   let arr= ['red','green','blue']
+   arr.pop() //留2
+   arr.pop()
+   console.log(arr)
+   //一个pop删除一个元素
+
+
+   unshift 前面加
+   shift 前面删
+   push 后面加
+   pop 后面删
+
+   let arr =['red','green','blue']
+   arr.shift() // 留后2
+   console.log(arr) 
+
+   操作数组-删除
+   随机抽奖 中奖的用户就需要从数组里面删除 不允许重复抽奖
+   点击删除按钮 相关数据会从商品数据中删除
+
+   数组.splice()方法 删除指定元素
+   语法：
+   arr.splice() 方法 删除指定元素
+   语法：
+   arr.splice(start,deleteCount)
+   arr.splice(起始位置，删除几个元素)
+      start 起始位置：
+      指定修改的开始位置（从0计数）
+      deleteCount：
+      表示移除的数组元素的个数
+      可选的 如果生了则从指定的起始位置删除到最后
+      eg：
+      splice（起始位置，删除几个）
+      let arr =['red','green','blue']
+      arr.splice(1,1) //是从索引号1的地方开始删
+      arr.splice(1) //从索引号1的位置开始删 删到最后
+      console(arr)
+
+      想要数组末尾删除1搁数据元素利用哪个方法？ 带参数吗
+      arr.pop()
+      不带参数
+      返回值是删除元素
+
+      想要数组开头删除1个数据元素利用哪个方法？带参数？
+      arr.shift()
+      不带参数
+      返回值是删除元素
+
+      指定数组元素那个  开发非常常用 场景
+      arr.splice
+
+      给四个季度的数值 生成一个柱状图
+      1.需要输入4次 把4个数据放到一个数组里
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display:flex;
+            width:700px;
+            height:300px;
+            border-left:1px solid pink;
+            border-bottom:1px solid pink;
+            margin:50px auto;
+            justify-content:space-around;
+            align-items:flex-end;
+            text-align:center;
+        }
+        .box div{
+            display:flex;
+            width:50px;
+            background-color:pink;
+            flex-direction:column;
+            justify-content:space-between;
+        }
+        .box div span{
+            margin-top:-20ox;
+        }
+        .box div h4{
+            margin-bottom:-35px;
+            width:70px;
+            margin-left:-10px;
+        }
+    </style>
+</head>
+<body>
+    
+    
+      
+    <script>
+      let arr =[]  
+      for(let i =1; i<=4; i++){
+        arr.push(prompt(`请输入第${i}季度的数据：`))
+      }
+      console.log(arr)
+      document.write(`<div class="box">`)
+        for(let i=0; i<arr.length;i++){
+            document.write(`
+           
+      <div style="height: ${arr[i]}px;">
+            <span>${arr[i]}</span>
+            <h4>第${i+1}季度</h4>
+      </div>`)
+        }
+      document.write(`</div>`)  
+    </script>
+</body>
+</html>
+
+冒泡排序：
+[2,3,1,4,5] [1,2,3,4,5] [5,4,3,2,1,]
+
+
+
+
+      
+      
+      
+
+      
+      
+      
+   
+   
+   
+
+   
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+    
     
    
    
